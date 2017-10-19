@@ -35,7 +35,7 @@ namespace MPV_Mobile
 
             void ScheduleClicked(object sender, EventArgs e)
             {
-                Schedule.BackgroundColor = Color.Aqua;
+                Navigation.PushModalAsync(new ScheduleAppointment());                
             }
 
             void ImportClicked(object sender, EventArgs e)

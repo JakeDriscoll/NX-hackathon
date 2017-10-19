@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.ComponentModel;
 using Plugin.Permissions;
 
 namespace MPV_Mobile.Droid
