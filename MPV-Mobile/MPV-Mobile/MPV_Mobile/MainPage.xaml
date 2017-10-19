@@ -4,8 +4,23 @@
              xmlns:local="clr-namespace:MPV_Mobile"
              x:Class="MPV_Mobile.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout            
+        VerticalOptions="Start"
+        HorizontalOptions="Center"
+        >
+
+        <Label Text="Welcome to MPV Mobile!" 
+           VerticalOptions="StartAndExpand" 
+           HorizontalOptions="Center"
+           />              
+
+        <Button Text="Login" x:Name="Login"/>
+        <Button Text="Register" x:Name="Register"/>
+        <Button Text="Schedule" x:Name="Schedule"/>
+        <Button Text="Import" x:Name="Import"/>
+        <Button Text="Message" x:Name="Message"/>
+        
+    </StackLayout>
+
 
 </ContentPage>
