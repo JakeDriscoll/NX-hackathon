@@ -33,11 +33,12 @@ namespace MPV_Mobile
             void ImportClicked(object sender, EventArgs e)
             {
                 Import.BackgroundColor = Color.Teal;
+                Navigation.PushModalAsync(new AddPhotoPage());
             }
 
             void MessageClicked(object sender, EventArgs e)
             {
-                Message.BackgroundColor = Color.DarkOrange;
+                Message.BackgroundColor = Color.DarkOrange;                
             }
         }
 	}
