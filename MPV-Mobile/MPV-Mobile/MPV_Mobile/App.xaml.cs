@@ -11,7 +11,7 @@ namespace MPV_Mobile
 	{
 		public App ()
 		{
-			InitializeComponent();
+			InitializeComponent();            
 
 			MainPage = new MPV_Mobile.MainPage();
 		}
