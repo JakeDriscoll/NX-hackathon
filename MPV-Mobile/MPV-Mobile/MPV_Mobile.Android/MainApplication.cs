@@ -4,6 +4,7 @@ using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
+using Firebase;
 
 namespace MPV_Mobile.Droid
 {
@@ -21,6 +22,7 @@ namespace MPV_Mobile.Droid
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
             //A great place to initialize Xamarin.Insights and Dependency Services!
+            FirebaseApp.InitializeApp(this);
         }
 
         public override void OnTerminate()

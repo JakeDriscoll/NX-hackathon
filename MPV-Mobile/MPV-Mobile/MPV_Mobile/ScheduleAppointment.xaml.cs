@@ -7,6 +7,8 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Data.SqlClient;
+using Firebase.Iid;
+using MPV_Mobile.Droid.Models;
 
 namespace MPV_Mobile
 {
@@ -28,7 +30,7 @@ namespace MPV_Mobile
             // we only have Dr. Sample so going to save the dev time and cheat here. 
             providerList.ItemsSource = new string[]
             {
-                "Dr. Sample"                
+                "Dr. Sample"
             };
 
             var requestAppointment = this.FindByName<Button>("requestAppointment");
@@ -56,18 +58,19 @@ namespace MPV_Mobile
 
         private void GeneratePracticeAppointment(DatePicker date, TimePicker time)
         {
-            // The amount of Dev work to update MPV to have a new endpoint and then all the backend work to create the new
-            // methods is not difficult, just very time consuming. To save time we're just going to make a direct connection 
-            // to Practice to create the appointment
-            SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
-            connection["Data Source"] = "10.0.2.2\\SQL2016";
-            connection["Database"] = "PracData_Garbage";
-            connection["User ID"] = "sa";
-            connection["Password"] = "nextechsql187";
-            connection["Integrated Security"] = false;
-
             try
             {
+                // The amount of Dev work to update MPV to have a new endpoint and then all the backend work to create the new
+                // methods is not difficult, just very time consuming. To save time we're just going to make a direct connection 
+                // to Practice to create the appointment
+                SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
+                connection["Data Source"] = "10.0.2.2\\SQL2016";
+                connection["Database"] = "PracData_Garbage";
+                connection["User ID"] = "sa";
+                connection["Password"] = "nextechsql187";
+                connection["Integrated Security"] = false;
+
+                var token = FirebaseInstanceId.Instance.Token;
                 using (SqlConnection conn = new SqlConnection(connection.ConnectionString))
                 {
                     using (SqlCommand cmd = conn.CreateCommand())
@@ -88,6 +91,9 @@ SELECT NewID FROM @tNewApiKeyID;
 INSERT INTO AppointmentResourceT (AppointmentID, ResourceID)
 VALUES ((SELECT NewID FROM @tNewApiKeyID), 13)
 
+INSERT INTO MpvNotificationT (Token, Event)
+VALUES (@Token, @Event)
+
 COMMIT TRAN
 
 ";
@@ -95,6 +101,8 @@ COMMIT TRAN
                         cmd.Parameters.AddWithValue("@startTime", GetStartTime(date.Date, time.Time));
                         cmd.Parameters.AddWithValue("@endTime", GetEndTime(date.Date, time.Time));
                         cmd.Parameters.AddWithValue("@arrivalTime", GetArrivalTime(date.Date, time.Time));
+                        cmd.Parameters.AddWithValue("@Token", token);
+                        cmd.Parameters.AddWithValue("@Event", NotificationType.AppointmentRequest);
 
                         conn.OpenAsync();
 
