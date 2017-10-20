@@ -18,7 +18,7 @@ namespace NotificationServer
         private static System.Timers.Timer InitializationTimer;
         private static readonly string FCMAddress = "https://fcm.googleapis.com/fcm/send";
         private static readonly string ServerKey = "AAAADtfyRQU:APA91bHoBH3AL0t4zc0MiJ5FJcZR_8ZctqzrLXyIQP8kGfbKguyi7QseeAg7YSVCFtd2cCaot_Hu4tLmKKQhFoMxYKDT3gMftgR2kfvzLIylP-SC3u53lD5otbyT1Cy5uOy6ZIUegvf_";
-        private static readonly string TestToken = "eebgf0vNCjA:APA91bHZf8fIpY3eT8Y_TNuZDV_MM4qeLllFyhczdvPm0IiLjT3KxhCmDl7b5cZXptRH8vDN7p03YryBvDFWdV_Jm_jKDDQPyCki_hB6YqJWixOm8vG0fJij3OMWWt4xN6mYV6JxCyXg";
+        private static readonly string TestToken = "dsSEM9rPcL4:APA91bHTCuc-U2Q7fuk9CJPAb74jOj_v6fXxeWFN5jsGmk8cxuqfI7shzPCU1pwftbik8FUmtrS4ijRbrS2Mq1XhHgAY_TARFyg5Vp_hLgmztscQkxRnxo6RfCIduuPELggt_t6RiJ8a";
         public NotificationSender()
         {
             InitializationTimer = new System.Timers.Timer();
