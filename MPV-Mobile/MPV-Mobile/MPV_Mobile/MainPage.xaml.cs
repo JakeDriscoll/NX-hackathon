@@ -18,6 +18,7 @@ namespace MPV_Mobile
             var Schedule = this.FindByName<Button>("Schedule");
             var Import = this.FindByName<Button>("Import");
             var Message = this.FindByName<Button>("Message");
+            var Login = this.FindByName<Button>("Login");
 
             Schedule.Clicked += ScheduleClicked;
 
@@ -25,20 +26,30 @@ namespace MPV_Mobile
 
             Message.Clicked += MessageClicked;
 
+            Login.Clicked += LoginClicked;
+
+            void LoginClicked(object sender, EventArgs e)
+            {
+                Navigation.PushModalAsync(new Login());
+            }
+
             void ScheduleClicked(object sender, EventArgs e)
             {
-                Schedule.BackgroundColor = Color.Aqua;
+                Navigation.PushModalAsync(new ScheduleAppointment());                
             }
 
             void ImportClicked(object sender, EventArgs e)
             {
                 Import.BackgroundColor = Color.Teal;
+                Navigation.PushModalAsync(new AddPhotoPage());
             }
 
             void MessageClicked(object sender, EventArgs e)
             {
-                Message.BackgroundColor = Color.DarkOrange;
+                Message.BackgroundColor = Color.DarkOrange;                
             }
+
+
         }
 	}
 }

@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.ComponentModel;
+using Plugin.Permissions;
 
 namespace MPV_Mobile.Droid
 {
@@ -22,6 +24,10 @@ namespace MPV_Mobile.Droid
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			LoadApplication (new MPV_Mobile.App ());
 		}
-	}
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
 }
 
