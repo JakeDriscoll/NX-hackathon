@@ -64,8 +64,8 @@ namespace MPV_Mobile
                 // methods is not difficult, just very time consuming. To save time we're just going to make a direct connection 
                 // to Practice to create the appointment
                 SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
-                connection["Data Source"] = "10.0.2.2\\SQL2016";
-                connection["Database"] = "PracData_Garbage";
+                connection["Data Source"] = "10.0.2.2\\NEXTECH";
+                connection["Database"] = "PracData";
                 connection["User ID"] = "sa";
                 connection["Password"] = "nextechsql187";
                 connection["Integrated Security"] = false;

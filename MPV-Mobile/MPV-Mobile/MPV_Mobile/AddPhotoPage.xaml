@@ -8,6 +8,8 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    x:Name="Header"/>
+            <Label Text="Notes for photo"/>
+            <Entry x:Name="Message" Text="Notes for photo" />
 
             <Image x:Name="PhotoImage"/>
             <Button Text="GetPhoto" x:Name="TakePhoto" Style=""/>

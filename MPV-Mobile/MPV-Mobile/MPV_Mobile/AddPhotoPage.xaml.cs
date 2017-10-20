@@ -21,19 +21,19 @@ namespace MPV_Mobile
         {
             InitializeComponent();
             var TakePhoto = this.FindByName<Button>("TakePhoto");
-            var togglebutton = this.FindByName<Xamarin.Forms.Switch>("doUpload");
-            togglebutton.Toggled += Togglebutton_Toggled;
+            //var togglebutton = this.FindByName<Xamarin.Forms.Switch>("doUpload");
+            //togglebutton.Toggled += Togglebutton_Toggled;
             TakePhoto.Clicked += TakePhotoClicked;
         }
 
-        private void Togglebutton_Toggled(object sender, ToggledEventArgs e)
-        {
-            if (this.FindByName<Xamarin.Forms.Switch>("doUpload").IsToggled)
-                Console.WriteLine("Toggled");
-            else
-                Console.WriteLine("Not Toggled");
-            Console.WriteLine("We got an event!!");
-        }
+        //private void Togglebutton_Toggled(object sender, ToggledEventArgs e)
+        //{
+        //    if (this.FindByName<Xamarin.Forms.Switch>("doUpload").IsToggled)
+        //        Console.WriteLine("Toggled");
+        //    else
+        //        Console.WriteLine("Not Toggled");
+        //    Console.WriteLine("We got an event!!");
+        //}
 
         //static CloudBlobContainer GetContainer(ContainerType containerType)
         //{
@@ -86,7 +86,7 @@ namespace MPV_Mobile
                 PhotoImage.Source = ImageSource.FromStream(() => { return photo.GetStream(); });
                 Header.Text = photo.Path;
                 String upoadedFileName = String.Empty;
-                if (this.FindByName<Xamarin.Forms.Switch>("doUpload").IsToggled)
+                //if (this.FindByName<Xamarin.Forms.Switch>("doUpload").IsToggled)
                     upoadedFileName = await UploadFileAsync(photo);
 
                 if (upoadedFileName != String.Empty)
