@@ -4,12 +4,13 @@
              x:Class="MPV_Mobile.AddPhotoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+            <Switch x:Name="doUpload" IsToggled="False" />
+            <Image Source="@drawable/mpv_logo"/>
+            <Image x:Name="PhotoImage"/>
+            <Label Text="Add a photo to your patient history"
                 HorizontalOptions="CenterAndExpand" 
                    x:Name="Header"/>
-
-            <Image x:Name="PhotoImage"/>
+            <Image x:Name="PhotoImage" Source="@drawable/mpv_logo"/>
             <Button Text="GetPhoto" x:Name="TakePhoto" Style=""/>
         </StackLayout>
     </ContentPage.Content>
