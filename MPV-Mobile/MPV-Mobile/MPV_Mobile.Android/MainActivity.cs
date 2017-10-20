@@ -8,6 +8,10 @@ using Android.Widget;
 using Android.OS;
 using System.ComponentModel;
 using Plugin.Permissions;
+using Android.Gms.Common;
+using Firebase.Messaging;
+using Firebase.Iid;
+using Android.Util;
 
 namespace MPV_Mobile.Droid
 {
