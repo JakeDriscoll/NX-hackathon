@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Windows;
+using System.Data.SqlClient;
 
 namespace MPV_Mobile
 {
@@ -41,12 +42,12 @@ namespace MPV_Mobile
             void ImportClicked(object sender, EventArgs e)
             {
                 Import.BackgroundColor = Color.Teal;
-                Navigation.PushModalAsync(new AddPhotoPage());
+                Navigation.PushModalAsync(new NavigationPage(new AddPhotoPage()));
             }
 
             void MessageClicked(object sender, EventArgs e)
             {
-                Message.BackgroundColor = Color.DarkOrange;                
+                Message.BackgroundColor = Color.DarkOrange;
             }
 
 

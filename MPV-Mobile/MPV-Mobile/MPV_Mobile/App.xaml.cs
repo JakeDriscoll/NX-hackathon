@@ -13,7 +13,7 @@ namespace MPV_Mobile
 		{
 			InitializeComponent();
 
-			MainPage = new MPV_Mobile.MainPage();
+			MainPage = new NavigationPage(new MPV_Mobile.MainPage());
 		}
 
 		protected override void OnStart ()

@@ -2,6 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MPV_Mobile.AddPhotoPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Menu1" Activated="OnClick"  Order="Primary" Priority="0" />
+        <ToolbarItem Name="Menu2" Activated="OnClick"  Order="Primary" Priority="1" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Switch x:Name="doUpload" IsToggled="False" />
