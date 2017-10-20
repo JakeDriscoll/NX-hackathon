@@ -5,17 +5,18 @@
              x:Class="MPV_Mobile.MainPage">
 
     <StackLayout            
-        VerticalOptions="Start"
+        VerticalOptions="Center"
         HorizontalOptions="Center"
         >
+
+        <Image x:Name="HeaderLogo"/>
 
         <Label Text="Welcome to MPV Mobile!" 
            VerticalOptions="StartAndExpand" 
            HorizontalOptions="Center"
-           />              
+           />
 
-        <Button Text="Login" x:Name="Login"/>
-        <Button Text="Register" x:Name="Register"/>
+        <Button Style="button_text" Text="Login" x:Name="Login"/>
         <Button Text="Schedule" x:Name="Schedule"/>
         <Button Text="Import" x:Name="Import"/>
         <Button Text="Message" x:Name="Message"/>

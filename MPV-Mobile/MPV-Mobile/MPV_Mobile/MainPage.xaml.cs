@@ -14,11 +14,20 @@ namespace MPV_Mobile
 		public MainPage()
 		{
             InitializeComponent();            
-                        
+            
+            // Create local variables of our app elements
             var Schedule = this.FindByName<Button>("Schedule");
             var Import = this.FindByName<Button>("Import");
             var Message = this.FindByName<Button>("Message");
             var Login = this.FindByName<Button>("Login");
+            var HeaderLogo = this.FindByName<Image>("HeaderLogo");
+
+            // Data manipulation
+            HeaderLogo.Source = ImageSource.FromFile("mpv_logo.png");
+            HeaderLogo.Aspect = Aspect.AspectFit;
+
+            /// OnClick event handlers
+            #region
 
             Schedule.Clicked += ScheduleClicked;
 
@@ -26,7 +35,7 @@ namespace MPV_Mobile
 
             Message.Clicked += MessageClicked;
 
-            Login.Clicked += LoginClicked;
+            Login.Clicked += LoginClicked;            
 
             void LoginClicked(object sender, EventArgs e)
             {
@@ -49,6 +58,7 @@ namespace MPV_Mobile
                 Message.BackgroundColor = Color.DarkOrange;                
             }
 
+#endregion
 
         }
 	}
